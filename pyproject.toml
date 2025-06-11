@@ -1,0 +1,14 @@
+[project]
+name = "fastserver"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "aiomysql>=0.2.0",
+    "cryptography>=45.0.4",
+    "dotenv>=0.9.9",
+    "fastapi[stard,stardard]>=0.115.12",
+    "pymysql>=1.1.1",
+    "uvicorn>=0.34.3",
+]

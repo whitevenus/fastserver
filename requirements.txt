@@ -1,0 +1,6 @@
+aiomysql==0.2.0
+fastapi[all]>=0.115.12
+pymysql==1.1.1
+uvicorn==0.34.3
+cryptography==45.0.4
+dotenv==0.9.9
