@@ -73,11 +73,14 @@ class MySQLConnection:
         parameters = parameters or {}
         result = {"rowcount": 0, "rows": []}
 
+        # 将字典参数转换为元组
+        param_tuple = tuple(parameters.values())
+
         async with cls.get_connection() as conn:
             async with conn.cursor(aiomysql.DictCursor) as cursor:
                 try:
                     # 执行参数化查询
-                    await cursor.execute(sql, parameters)
+                    await cursor.execute(sql, param_tuple)
 
                     # 处理 SELECT 查询
                     if cursor.description:

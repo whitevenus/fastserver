@@ -82,7 +82,7 @@
 
 ```json
 {
-  "sql": "SELECT * FROM student WHERE age > :age",
+  "sql": "SELECT * FROM student WHERE age > %s",
   "parameters": {
     "age": 20
   }
