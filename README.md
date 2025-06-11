@@ -33,7 +33,7 @@
    ```
 
 2. 配置环境变量：
-   复制环境变量示例文件并修改配置：
+   复制环境变量示例文件并修改配置(只需要修改密码：保持与 secrets/mysql_root_password.txt 文件中一致就可)：
 
    ```bash
    cp .env.example .env
@@ -45,10 +45,7 @@
    docker compose up -d
    ```
 
-4. 手动导入 mysql 数据：
-   将 init.sql 脚本在刚刚启动的 mysql 容器中导入
-
-5. 验证服务：
+4. 验证服务：
    ```bash
    curl http://localhost:8000/health
    ```
