@@ -32,9 +32,12 @@ services:
     container_name: fastserver-mysql
     restart: unless-stopped
     environment:
-      - MYSQL_USER=root
-      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql_root_password
+      - MYSQL_USER=mwt
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql_mwt_password
       - MYSQL_DATABASE=test
+      - MYSQL_CHARSET=utf8mb4
+      - MYSQL_COLLATION=utf8mb4_unicode_ci
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     ports:
       - "3306:3306"
     volumes:
@@ -43,7 +46,7 @@ services:
     networks:
       - app-network
     secrets:
-      - mysql_root_password
+      - mysql_mwt_password
     healthcheck:
       test:
         [
@@ -76,5 +79,5 @@ volumes:
     name: fastserver-mysql-data
 
 secrets:
-  mysql_root_password:
-    file: ./secrets/mysql_root_password.txt
+  mysql_mwt_password:
+    file: ./secrets/mysql_mwt_password.txt
