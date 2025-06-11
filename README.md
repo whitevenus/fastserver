@@ -45,7 +45,10 @@
    docker compose up -d
    ```
 
-4. 验证服务：
+4. 手动导入 mysql 数据：
+   将 init.sql 脚本在刚刚启动的 mysql 容器中导入
+
+5. 验证服务：
    ```bash
    curl http://localhost:8000/health
    ```
