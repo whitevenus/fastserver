@@ -72,49 +72,12 @@
    uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
    ```
 
-## 接口文档
+## 接口请求示例
 
-### SQL 查询接口
-
-**POST** `/execute-sql`
-
-请求体示例：
-
-```json
-{
-  "sql": "SELECT * FROM student WHERE age > 21"
-}
-```
-
-响应示例：
-
-```json
-{
-  "status": "success",
-  "data": [
-    {
-      "id": 1,
-      "name": "张三",
-      "age": 22
-    }
-  ],
-  "message": "查询成功执行，影响 1 行"
-}
-```
-
-### 健康检查接口
-
-**GET** `/health`
-
-响应示例：
-
-```json
-{
-  "status": "healthy",
-  "database": true,
-  "version": "1.0.0"
-}
-```
+![./img/1.png](示例1)
+![./img/2.png](示例2)
+![./img/3.png](示例3)
+![./img/4.png](示例4)
 
 ## 配置说明
 
